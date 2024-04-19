@@ -32,7 +32,7 @@ namespace Silicon_WebAppG.ViewModels
 
         [CheckboxRequired]
         [Display(Name = "I agree to the Terms & Conditions. ", Prompt = "Terms and Conditions")]
-        public string TermsAndConditions { get; set; }
+        public bool TermsAndConditions { get; set; }
 
     }
 }
