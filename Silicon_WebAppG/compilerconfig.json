@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/scss/sections/_integrate-tools.css",
+    "inputFile": "wwwroot/css/scss/sections/_integrate-tools.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.scss"
+  }
+]
