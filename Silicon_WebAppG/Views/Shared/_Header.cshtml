@@ -1,0 +1,47 @@
+﻿﻿@{
+	var user = await UserManager.GetUserAsync(User);
+}
+<header>
+	<div class="container">
+		<a id="logo" asp-action="Home" asp-controller="Default">
+			<img src="~/images/Logotypes/silicion-logo-light_theme.svg" alt="Silicon Logo" />
+		</a>
+
+		<div>
+			<nav>
+				<a class="menu-link" asp-action="Home" asp-controller="Default" asp-fragment="showcase">Overview</a>
+				<a class="menu-link" asp-action="Home" asp-controller="Default" asp-fragment="features">Features</a>
+				@if (SignInManager.IsSignedIn(User))
+				{
+					<a class="menu-link" asp-action="Index" asp-controller="Courses">Courses</a>
+				}
+
+				<a class="menu-link" asp-action="Contact" asp-controller="Default">Contact</a>
+			</nav>
+		</div>
+
+		<div class="btn-switch">
+			<label>Light</label>
+			<label class="switch" for="switch-mode">
+				<input type="checkbox" id="switch-mode" />
+				<span class="slider round"></span>
+			</label>
+			<label>Dark</label>
+		</div>
+
+		<div class="account-buttons">
+			@if (SignInManager.IsSignedIn(User))
+			{
+				<a asp-action="Details" asp-controller="Account">
+					<img src=~/images/uploads/profiles/@user.!ProfileImage alt="Profile picture" />
+				</a>
+			}
+			else
+			{
+				<a class="btn-gray" asp-action="SignIn" asp-controller="Auth"><i class="fa-regular fa-right-to-bracket"></i><span>Sign In</span></a>
+				<a class="btn-theme" asp-action="SignUp" asp-controller="Auth"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
+			}
+
+		</div>
+	</div>
+</header>
