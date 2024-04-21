@@ -1,2 +1,6 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using Silicon_WebAppG.ViewModels
+@using Infrastructure.Entities
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<UserEntity> UserManager
+@inject SignInManager<UserEntity> SignInManager
