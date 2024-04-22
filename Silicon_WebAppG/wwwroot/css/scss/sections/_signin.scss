@@ -1,14 +1,11 @@
 ﻿.signin {
     margin-top: 30px;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     .container {
         width: 35%;
 
-        form {
+        form-content {
 
             input {
                 padding-top: 15px;
@@ -16,7 +13,6 @@
             }
 
             .form-content {
-                margin-top: 30px;
                 display: grid;
                 gap: 20px;
                 grid-template-columns: 1fr;
@@ -42,7 +38,7 @@
                 grid-area: password;
             }
 
-            #form-rememberMe {
+            #form-checkbox {
                 grid-area: remember;
             }
 

@@ -18,7 +18,12 @@
             <div class="profile-info">
                 <h3 class="displayname">@user.FirstName @user.LastName</h3>
                 <p>@user.Email</p>
+                <nav>
+                    <a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
+                    <a class="btn-transparent" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
+                </nav>
             </div>
+
         </div>
     </section>
 }

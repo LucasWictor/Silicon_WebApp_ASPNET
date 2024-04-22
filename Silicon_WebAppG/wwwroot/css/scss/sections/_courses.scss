@@ -1,1 +1,97 @@
-﻿
+﻿.courses {
+    padding-top: 3rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#form-filters {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#searchQuery {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.course-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-item {
+    width: calc(50% - 10px); /* Two items in a row with 20px gap */
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+}
+
+.bestseller {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.course-info {
+    padding: 1rem;
+}
+
+.course-info h5 {
+    margin-top: 0;
+}
+
+.course-info p {
+    margin-bottom: 0.5rem;
+}
+
+.course-info .pricing {
+    display: flex;
+    align-items: center;
+}
+
+.course-info .price {
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.course-info .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-info .footer i {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .course-item {
+        width: calc(100% - 20px); /* Full width on smaller screens */
+    }
+}

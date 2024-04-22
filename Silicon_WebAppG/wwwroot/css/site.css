@@ -158,7 +158,7 @@ h4, .h4 {
 h5, .h5 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   color: #0B0F19;
@@ -1111,47 +1111,251 @@ footer .container p {
   text-decoration: none;
 }
 
-.signin {
-  margin-top: 30px;
+.signup {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.signup .container {
+  width: 40%;
+}
+.signup .container form .form-content {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email email" "password confirm" "terms terms" "submit submit";
+}
+.signup .container form .input-group label {
+  padding: 3px;
+}
+.signup .container form .checkbox-group {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.signup .container form #form-firstname {
+  grid-area: firstname;
+}
+.signup .container form #form-lastname {
+  grid-area: lastname;
+}
+.signup .container form #form-email {
+  grid-area: email;
+}
+.signup .container form #form-password {
+  grid-area: password;
+}
+.signup .container form #form-confirmpassword {
+  grid-area: confirm;
+}
+.signup .container form #form-checkbox {
+  grid-area: terms;
+}
+.signup .container form #form-button {
+  grid-area: submit;
+}
+
+.signin {
+  margin-top: 30px;
+  height: 100%;
+}
 .signin .container {
   width: 35%;
 }
-.signin .container form input {
+.signin .container form-content input {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.signin .container form .form-content {
-  margin-top: 30px;
+.signin .container form-content .form-content {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
   grid-template-areas: "email" "password" "remember";
 }
-.signin .container form .input-group label {
+.signin .container form-content .input-group label {
   padding: 3px;
 }
-.signin .container form .checkbox-group {
+.signin .container form-content .checkbox-group {
   margin-top: 10px;
   margin-bottom: 30px;
 }
-.signin .container form #form-email {
+.signin .container form-content #form-email {
   grid-area: email;
 }
-.signin .container form #form-password {
+.signin .container form-content #form-password {
   grid-area: password;
 }
-.signin .container form #form-rememberMe {
+.signin .container form-content #form-checkbox {
   grid-area: remember;
 }
-.signin .container form #btn-submit {
+.signin .container form-content #btn-submit {
   grid-area: submit;
 }
 
+textarea,
+select,
+input:not([type=checkbox]) {
+  min-width: 300px;
+  font-size: 16px;
+  font-family: "manrope";
+  font-weight: 400 !important;
+  padding: 5px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-400);
+}
+textarea::placeholder,
+select::placeholder,
+input:not([type=checkbox])::placeholder {
+  opacity: 0.5;
+}
+
+.input-search-group {
+  position: relative;
+}
+.input-search-group input {
+  position: relative;
+  padding-right: 40px;
+}
+.input-search-group i {
+  position: absolute;
+  top: 14px;
+  right: 1rem;
+}
+
+.select {
+  position: relative;
+  min-width: 300px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+.select .selected {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-400);
+  cursor: pointer;
+}
+.select .select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-white);
+  z-index: 10;
+}
+.select .select-options .option {
+  padding: 10px;
+  cursor: pointer;
+}
+.select .select-options .option:hover {
+  background-color: var(--color-gray-400);
+}
+
+input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
+form {
+  width: 100%;
+  display: grid;
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+form .input-group {
+  display: grid;
+}
+form .input-group input {
+  padding: 16px;
+}
+form .checkbox-group input[type=checkbox] {
+  margin-right: 10px;
+}
+form .checkbox-group .input-group {
+  display: flex;
+  align-items: center;
+}
+form button {
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+form .field-validation-error {
+  font-size: 14px;
+  font-weight: 400 !important;
+  color: var(--color-danger-dark);
+  padding: 2px 5px;
+}
+
+.account-details {
+  padding: 30px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.content {
+  flex: 2;
+}
+
+.alert {
+  margin-bottom: 20px;
+}
+
+.form-basic, .form-address {
+  margin-bottom: 30px;
+}
+
+.form-content {
+  display: grid;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+span.text-danger {
+  font-size: 12px;
+  color: #dc3545;
+}
+
+.form-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  aside {
+    margin-right: 0;
+  }
+}
 textarea,
 select,
 input:not([type=checkbox]) {
@@ -1265,6 +1469,7 @@ form .field-validation-error {
 #account-details aside .profile-info h5 {
   margin-top: 15px;
   margin-bottom: 0px;
+  color: red;
 }
 #account-details aside .profile-info padding {
   line-height: 160%;
@@ -1363,4 +1568,102 @@ form .field-validation-error {
   margin: 20px 0;
   display: flex;
   gap: 20px;
+}
+
+.courses {
+  padding-top: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+#form-filters {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#searchQuery {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.course-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-item {
+  width: calc(50% - 10px); /* Two items in a row with 20px gap */
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.course-item:hover {
+  transform: translateY(-5px);
+}
+
+.bestseller {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f00;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.course-info {
+  padding: 1rem;
+}
+
+.course-info h5 {
+  margin-top: 0;
+}
+
+.course-info p {
+  margin-bottom: 0.5rem;
+}
+
+.course-info .pricing {
+  display: flex;
+  align-items: center;
+}
+
+.course-info .price {
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.course-info .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-info .footer i {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .course-item {
+    width: calc(100% - 20px); /* Full width on smaller screens */
+  }
 }
